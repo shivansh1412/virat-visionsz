@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" width="220" height="80">
+  <rect width="220" height="80" fill="white"/>
+  <!-- Saint-Gobain: blue text with red underline bar -->
+  <text x="10" y="38" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#003087">SAINT-GOBAIN</text>
+  <rect x="10" y="44" width="200" height="5" fill="#E31837"/>
+  <text x="10" y="62" font-family="Arial,sans-serif" font-size="10" fill="#555" letter-spacing="1">GLASS · CONSTRUCTION · INNOVATION</text>
+</svg>

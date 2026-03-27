@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <!-- TATA logo: dark blue oval with TATA text -->
+  <ellipse cx="100" cy="40" rx="88" ry="34" fill="#00205B"/>
+  <text x="100" y="49" font-family="Arial,sans-serif" font-weight="900" font-size="34" fill="white" text-anchor="middle" letter-spacing="6">TATA</text>
+</svg>

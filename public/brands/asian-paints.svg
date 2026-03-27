@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" fill="white"/>
+  <!-- Asian Paints: colorful circle logo -->
+  <!-- Multicolor pie slices -->
+  <circle cx="36" cy="40" r="28" fill="#E31837"/>
+  <path d="M36,40 L36,12 A28,28 0 0,1 64,40 Z" fill="#FF6B00"/>
+  <path d="M36,40 L64,40 A28,28 0 0,1 36,68 Z" fill="#FFD700"/>
+  <path d="M36,40 L36,68 A28,28 0 0,1 8,40 Z" fill="#00A651"/>
+  <circle cx="36" cy="40" r="10" fill="white"/>
+  <!-- Text -->
+  <text x="72" y="36" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="16" fill="#1A1A1A">ASIAN</text>
+  <text x="72" y="56" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="16" fill="#E31837">PAINTS</text>
+</svg>

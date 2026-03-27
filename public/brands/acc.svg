@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" fill="white"/>
+  <!-- ACC Cement: blue badge with ACC -->
+  <rect x="6" y="10" width="68" height="60" fill="#003087" rx="4"/>
+  <text x="40" y="54" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="32" fill="white" text-anchor="middle">ACC</text>
+  <text x="84" y="38" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="18" fill="#003087">CEMENT</text>
+  <text x="84" y="56" font-family="Arial,sans-serif" font-size="10" fill="#888" letter-spacing="1">A CONGLOMERATE CO.</text>
+</svg>

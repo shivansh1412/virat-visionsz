@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <!-- JCB: iconic yellow background, black bold text -->
+  <rect width="200" height="80" fill="#FFD700"/>
+  <text x="100" y="57" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="52" fill="#1A1A1A" text-anchor="middle" letter-spacing="2">JCB</text>
+</svg>

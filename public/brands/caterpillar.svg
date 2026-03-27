@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <!-- Caterpillar CAT: yellow background, black bold -->
+  <rect width="200" height="80" fill="#FFD100"/>
+  <text x="14" y="56" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="48" fill="#1A1A1A">CAT</text>
+  <!-- CAT diamond arrow logo -->
+  <polygon points="162,20 190,40 162,60 158,40" fill="#1A1A1A"/>
+</svg>

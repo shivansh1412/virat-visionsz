@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" fill="white"/>
+  <!-- Havells: red bold stylized text -->
+  <!-- Lightning bolt icon -->
+  <polygon points="30,12 18,42 26,42 14,68 44,34 34,34 46,12" fill="#E31837"/>
+  <!-- havells text -->
+  <text x="56" y="50" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="28" fill="#E31837">havells</text>
+  <rect x="56" y="56" width="130" height="3" fill="#E31837"/>
+</svg>
