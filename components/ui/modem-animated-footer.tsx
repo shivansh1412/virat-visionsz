@@ -94,7 +94,7 @@ export const Footer = ({
           {/* Bottom row */}
           <div className="mt-20 md:mt-24 flex flex-col gap-2 md:gap-1 items-center justify-center md:flex-row md:items-center md:justify-between px-4 md:px-0">
             <p className="text-sm text-[#1a2a5e]/40 text-center md:text-left">
-              &copy;{new Date().getFullYear()} {brandName} Pvt. Ltd. All rights reserved.
+              &copy;{new Date().getFullYear()} {brandName} Pvt Ltd. All rights reserved.
             </p>
             {creatorName && creatorUrl && (
               <nav className="flex gap-4">

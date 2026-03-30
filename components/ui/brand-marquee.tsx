@@ -88,7 +88,7 @@ const BRANDS_ROW1 = [
     ),
   },
   {
-    name: "Metaworks",
+    name: "Metaworx",
     img: "/brands/metaworks.svg",
     fallback: "/brands/metaworks.svg",
     svg: (

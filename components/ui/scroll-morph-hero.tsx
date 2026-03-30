@@ -135,6 +135,25 @@ export default function ScrollMorphHero() {
     return () => observer.disconnect();
   }, []);
 
+  // ── Shared circle sizing (used by both image layout AND center content) ──────
+  const { circleRadius, globalScale, innerSafeDiameter } = useMemo(() => {
+    if (!containerSize.width || !containerSize.height) {
+      return { circleRadius: 200, globalScale: 1, innerSafeDiameter: 120 };
+    }
+    const isMobile = containerSize.width < 768;
+    const isSmall = containerSize.width < 480;
+    const minDimension = Math.min(containerSize.width, containerSize.height);
+    const gScale = isSmall
+      ? Math.min(containerSize.width / 560, 0.6)
+      : isMobile
+      ? Math.min(containerSize.width / 720, 0.82)
+      : 1;
+    const radius = Math.min(minDimension * 0.30, 260) * gScale;
+    // Inner safe zone = radius minus half the card height so content never touches cards
+    const safe = Math.max((radius - IMG_HEIGHT / 2 - 8) * 2, 80);
+    return { circleRadius: radius, globalScale: gScale, innerSafeDiameter: safe };
+  }, [containerSize]);
+
   // Virtual scroll
   const virtualScroll = useMotionValue(0);
   const scrollRef = useRef(0);
@@ -267,8 +286,8 @@ export default function ScrollMorphHero() {
       className="relative w-full h-full overflow-hidden"
       style={{ background: "linear-gradient(160deg, #f0f2f5 0%, #e8eaf0 50%, #f5f0e8 100%)" }}
     >
-      {/* ── Center text — lives OUTSIDE the perspective div so 3D cards never cover it ── */}
-      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
+      {/* ── Center text — outside perspective, sized to always fit inside the circle ── */}
+      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={
@@ -277,19 +296,27 @@ export default function ScrollMorphHero() {
               : { opacity: 0, filter: "blur(10px)" }
           }
           transition={{ duration: 1 }}
-          className="flex flex-col items-center gap-3"
+          className="flex flex-col items-center"
+          style={{ width: innerSafeDiameter, maxWidth: innerSafeDiameter }}
         >
           <img
             src="/logo.png"
             alt="Virat Visionsz"
-            className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain mb-2 drop-shadow-xl"
+            style={{ width: innerSafeDiameter * 0.38, height: innerSafeDiameter * 0.38 }}
+            className="object-contain drop-shadow-xl mb-1"
           />
-          <h1 className="text-lg sm:text-2xl font-light tracking-tight text-[#1a2a5e] md:text-4xl">
+          <h1
+            style={{ fontSize: Math.max(innerSafeDiameter * 0.11, 9) }}
+            className="font-light tracking-tight text-[#1a2a5e] leading-snug w-full"
+          >
             Where Vision Meets{" "}
             <span className="font-semibold text-[#c8922a]">Concrete</span>
           </h1>
-          <p className="mt-1 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#1a2a5e]/50 uppercase">
-            Scroll to Explore Our Work
+          <p
+            style={{ fontSize: Math.max(innerSafeDiameter * 0.055, 6) }}
+            className="font-medium tracking-[0.12em] text-[#1a2a5e]/35 uppercase mt-1"
+          >
+            ↓ scroll to explore
           </p>
         </motion.div>
       </div>
@@ -307,7 +334,7 @@ export default function ScrollMorphHero() {
             className="w-24 h-24 object-contain mb-4 drop-shadow-lg"
           />
           <p className="text-xs font-bold tracking-[0.25em] text-[#c8922a] uppercase mb-2">
-            Virat Visionsz Pvt. Ltd.
+            Virat Visionsz Pvt Ltd
           </p>
           <h2 className="text-3xl md:text-5xl font-light text-[#1a2a5e] tracking-tight mb-1 leading-tight">
             Engineered to{" "}
@@ -339,18 +366,7 @@ export default function ScrollMorphHero() {
               };
             } else {
               const isMobile = containerSize.width < 768;
-              const isSmall = containerSize.width < 480;
-              const minDimension = Math.min(containerSize.width, containerSize.height);
-
-              // Global scale factor — shrinks everything proportionally on small screens
-              const globalScale = isSmall
-                ? Math.min(containerSize.width / 560, 0.6)
-                : isMobile
-                ? Math.min(containerSize.width / 720, 0.82)
-                : 1;
-
-              // Circle — radius scales with screen, capped to always clear the center text
-              const circleRadius = Math.min(minDimension * 0.30, 260) * globalScale;
+              // Use shared circleRadius + globalScale computed above
               const circleAngle = (i / TOTAL_IMAGES) * 360;
               const circleRad = (circleAngle * Math.PI) / 180;
               const circlePos = {

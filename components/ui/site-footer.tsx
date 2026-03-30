@@ -6,7 +6,7 @@ import { Linkedin, Mail, Phone } from "lucide-react";
 const socialLinks = [
   {
     icon: <Linkedin className="w-6 h-6" />,
-    href: "https://linkedin.com/company/viratvisionsz",
+    href: "https://www.linkedin.com/in/viratsinghvv",
     label: "LinkedIn",
   },
   {
@@ -42,7 +42,7 @@ export default function SiteFooter() {
       brandDescription="Building Legacies with Infinite Vision — Delhi NCR's trusted EPC partner for residential, commercial, and institutional projects."
       socialLinks={socialLinks}
       navLinks={navLinks}
-      creatorName="Virat Visionsz Pvt. Ltd."
+      creatorName="Virat Visionsz Pvt Ltd"
       creatorUrl="mailto:viratvisionsz@gmail.com"
     />
   );

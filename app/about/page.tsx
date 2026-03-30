@@ -287,7 +287,7 @@ export default function AboutPage() {
               <div className="space-y-5 text-[#1a2a5e]/70 leading-relaxed text-base">
                 <p>
                   <strong className="text-[#1a2a5e]">
-                    Virat Visionsz Pvt. Ltd.
+                    Virat Visionsz Pvt Ltd
                   </strong>{" "}
                   is a Delhi NCR-based EPC (Engineering, Procurement &
                   Construction) company with over two decades of experience
@@ -356,14 +356,12 @@ export default function AboutPage() {
             {/* Photo */}
             <FadeIn delay={0.1} className="md:col-span-2">
               <div className="relative">
-                {/* Square container — full photo visible, no crop */}
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-xl bg-[#0d1833]">
-                  <img
-                    src="/virat-singh.png"
-                    alt="Virat Singh — Founder & Managing Director"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
+                {/* Full portrait — plain image, no wrapper */}
+                <img
+                  src="/virat-singh.png"
+                  alt="Virat Singh — Founder & Managing Director"
+                  className="w-full h-auto block rounded-xl"
+                />
                 {/* Name card */}
                 <div className="absolute -bottom-5 -right-5 bg-[#1a2a5e] text-white rounded-xl px-5 py-4 shadow-xl">
                   <p className="font-bold text-base leading-tight">Virat Singh</p>

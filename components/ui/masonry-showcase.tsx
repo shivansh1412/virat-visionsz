@@ -17,7 +17,7 @@ const TILES = [
     img: "/virat-singh.png",
     href: "/about",
     cta: "Read His Story",
-    imgH: "h-[340px]",
+    imgH: "h-[380px]",
     accent: true,
     icon: null,
     imgPosition: "object-top",
@@ -169,6 +169,29 @@ const TILES = [
   },
 ];
 
+// ─── plain director image — no card, no chrome ───────────────────────────────
+function DirectorCard({ tile, index }: { tile: (typeof TILES)[number]; index: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 32 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.55, delay: (index % 4) * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+      className="break-inside-avoid mb-4"
+    >
+      <Link href={tile.href}>
+        <img
+          src={tile.img}
+          alt={tile.title}
+          className="w-full h-auto block rounded-2xl"
+        />
+      </Link>
+    </motion.div>
+  );
+}
+
 // ─── card component ──────────────────────────────────────────────────────────
 function MasonryCard({
   tile,
@@ -188,7 +211,7 @@ function MasonryCard({
       transition={{ duration: 0.55, delay: (index % 4) * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
       className="break-inside-avoid mb-4 group"
     >
-      <Link href={tile.href} className="block rounded-2xl overflow-hidden bg-white border border-[#1a2a5e]/8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <Link href={tile.href} className="block rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         {/* Image */}
         <div className={`relative ${tile.imgH} overflow-hidden`}>
           <img
