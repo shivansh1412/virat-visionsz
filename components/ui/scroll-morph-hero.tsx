@@ -270,7 +270,7 @@ export default function ScrollMorphHero() {
       <div className="flex h-full w-full flex-col items-center justify-center" style={{ perspective: "1000px" }}>
 
         {/* Initial text — fades out as morph begins */}
-        <div className="absolute z-0 flex flex-col items-center justify-center text-center pointer-events-none top-1/2 -translate-y-1/2">
+        <div className="absolute z-30 flex flex-col items-center justify-center text-center pointer-events-none top-1/2 -translate-y-1/2 px-4 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={
@@ -285,13 +285,13 @@ export default function ScrollMorphHero() {
             <img
               src="/logo.png"
               alt="Virat Visionsz"
-              className="w-36 h-36 object-contain mb-3 drop-shadow-xl"
+              className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain mb-2 drop-shadow-xl"
             />
-            <h1 className="text-2xl font-light tracking-tight text-[#1a2a5e] md:text-4xl">
+            <h1 className="text-lg sm:text-2xl font-light tracking-tight text-[#1a2a5e] md:text-4xl">
               Where Vision Meets{" "}
               <span className="font-semibold text-[#c8922a]">Concrete</span>
             </h1>
-            <p className="mt-2 text-xs font-bold tracking-[0.2em] text-[#1a2a5e]/50 uppercase">
+            <p className="mt-1 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#1a2a5e]/50 uppercase">
               Scroll to Explore Our Work
             </p>
           </motion.div>
@@ -340,10 +340,18 @@ export default function ScrollMorphHero() {
               };
             } else {
               const isMobile = containerSize.width < 768;
+              const isSmall = containerSize.width < 480;
               const minDimension = Math.min(containerSize.width, containerSize.height);
 
-              // Circle
-              const circleRadius = Math.min(minDimension * 0.35, 350);
+              // Global scale factor — shrinks everything proportionally on small screens
+              const globalScale = isSmall
+                ? Math.min(containerSize.width / 560, 0.6)
+                : isMobile
+                ? Math.min(containerSize.width / 720, 0.82)
+                : 1;
+
+              // Circle — radius scales with screen so images never overflow
+              const circleRadius = Math.min(minDimension * 0.35, 320) * globalScale;
               const circleAngle = (i / TOTAL_IMAGES) * 360;
               const circleRad = (circleAngle * Math.PI) / 180;
               const circlePos = {
@@ -368,14 +376,14 @@ export default function ScrollMorphHero() {
                 x: Math.cos(arcRad) * arcRadius + parallaxValue,
                 y: Math.sin(arcRad) * arcRadius + arcCenterY,
                 rotation: currentArcAngle + 90,
-                scale: isMobile ? 1.4 : 1.8,
+                scale: (isMobile ? 1.4 : 1.8) * globalScale,
               };
 
               target = {
                 x: lerp(circlePos.x, arcPos.x, morphValue),
                 y: lerp(circlePos.y, arcPos.y, morphValue),
                 rotation: lerp(circlePos.rotation, arcPos.rotation, morphValue),
-                scale: lerp(1, arcPos.scale, morphValue),
+                scale: lerp(globalScale, arcPos.scale, morphValue),
                 opacity: 1,
               };
             }
