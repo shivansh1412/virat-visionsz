@@ -267,35 +267,34 @@ export default function ScrollMorphHero() {
       className="relative w-full h-full overflow-hidden"
       style={{ background: "linear-gradient(160deg, #f0f2f5 0%, #e8eaf0 50%, #f5f0e8 100%)" }}
     >
-      <div className="flex h-full w-full flex-col items-center justify-center" style={{ perspective: "1000px" }}>
+      {/* ── Center text — lives OUTSIDE the perspective div so 3D cards never cover it ── */}
+      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+          animate={
+            introPhase === "circle" && morphValue < 0.5
+              ? { opacity: 1 - morphValue * 2, y: 0, filter: "blur(0px)" }
+              : { opacity: 0, filter: "blur(10px)" }
+          }
+          transition={{ duration: 1 }}
+          className="flex flex-col items-center gap-3"
+        >
+          <img
+            src="/logo.png"
+            alt="Virat Visionsz"
+            className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain mb-2 drop-shadow-xl"
+          />
+          <h1 className="text-lg sm:text-2xl font-light tracking-tight text-[#1a2a5e] md:text-4xl">
+            Where Vision Meets{" "}
+            <span className="font-semibold text-[#c8922a]">Concrete</span>
+          </h1>
+          <p className="mt-1 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#1a2a5e]/50 uppercase">
+            Scroll to Explore Our Work
+          </p>
+        </motion.div>
+      </div>
 
-        {/* Initial text — fades out as morph begins */}
-        <div className="absolute z-30 flex flex-col items-center justify-center text-center pointer-events-none top-1/2 -translate-y-1/2 px-4 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-            animate={
-              introPhase === "circle" && morphValue < 0.5
-                ? { opacity: 1 - morphValue * 2, y: 0, filter: "blur(0px)" }
-                : { opacity: 0, filter: "blur(10px)" }
-            }
-            transition={{ duration: 1 }}
-            className="flex flex-col items-center gap-3"
-          >
-            {/* Logo */}
-            <img
-              src="/logo.png"
-              alt="Virat Visionsz"
-              className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain mb-2 drop-shadow-xl"
-            />
-            <h1 className="text-lg sm:text-2xl font-light tracking-tight text-[#1a2a5e] md:text-4xl">
-              Where Vision Meets{" "}
-              <span className="font-semibold text-[#c8922a]">Concrete</span>
-            </h1>
-            <p className="mt-1 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#1a2a5e]/50 uppercase">
-              Scroll to Explore Our Work
-            </p>
-          </motion.div>
-        </div>
+      <div className="flex h-full w-full flex-col items-center justify-center" style={{ perspective: "1000px" }}>
 
         {/* Arc content — fades in after morph */}
         <motion.div
@@ -350,8 +349,8 @@ export default function ScrollMorphHero() {
                 ? Math.min(containerSize.width / 720, 0.82)
                 : 1;
 
-              // Circle — radius scales with screen so images never overflow
-              const circleRadius = Math.min(minDimension * 0.35, 320) * globalScale;
+              // Circle — radius scales with screen, capped to always clear the center text
+              const circleRadius = Math.min(minDimension * 0.30, 260) * globalScale;
               const circleAngle = (i / TOTAL_IMAGES) * 360;
               const circleRad = (circleAngle * Math.PI) / 180;
               const circlePos = {
