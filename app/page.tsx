@@ -16,7 +16,9 @@ export default function Home() {
       <LandingHero />
 
       {/* Section 3: Masonry showcase — magazine, brochure, director notes, services */}
-      <MasonryShowcase />
+      <div id="portfolio">
+        <MasonryShowcase />
+      </div>
 
       {/* Section 4: Trusted brand partners marquee */}
       <BrandMarquee />

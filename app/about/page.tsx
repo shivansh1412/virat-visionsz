@@ -250,8 +250,8 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="mt-5 text-white/65 text-lg max-w-2xl leading-relaxed">
-              Two decades of turning empty land into enduring landmarks across
-              Delhi NCR and beyond — residential, commercial, institutional, and
+              Turning empty land into landscapes — enduring landmarks across
+              Delhi NCR and beyond, residential, commercial, institutional, and
               everything in between.
             </p>
           </FadeIn>
@@ -479,11 +479,15 @@ export default function AboutPage() {
                 sharing with project stakeholders, architects, consultants, and
                 government bodies evaluating us for upcoming tenders.
               </p>
-              <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border-2 border-[#1a2a5e] text-[#1a2a5e] text-sm font-semibold hover:bg-[#1a2a5e] hover:text-white transition-colors duration-300 cursor-pointer">
+              <a
+                href="/brochure.pdf"
+                download="Virat-Visionsz-Brochure.pdf"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border-2 border-[#1a2a5e] text-[#1a2a5e] text-sm font-semibold hover:bg-[#1a2a5e] hover:text-white transition-colors duration-300"
+              >
                 <FileText className="w-4 h-4" />
                 Download PDF Brochure
                 <ArrowUpRight className="w-4 h-4" />
-              </div>
+              </a>
             </FadeIn>
             <FadeIn className="order-1 md:order-2">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
@@ -576,7 +580,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA / Contact strip ───────────────────────────────────────── */}
-      <section className="py-20 bg-[#1a2a5e]">
+      <section id="contact" className="py-20 bg-[#1a2a5e]">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <FadeIn>
             <p className="text-[#c8922a] text-xs font-bold tracking-[0.2em] uppercase mb-3">

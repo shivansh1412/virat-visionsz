@@ -177,8 +177,10 @@ export default function ScrollMorphHero() {
     let touchStartY = 0;
     const handleTouchStart = (e: TouchEvent) => { touchStartY = e.touches[0].clientY; };
     const handleTouchMove = (e: TouchEvent) => {
-      const delta = touchStartY - e.touches[0].clientY;
+      const rawDelta = touchStartY - e.touches[0].clientY;
       touchStartY = e.touches[0].clientY;
+      // Multiply touch delta so a single swipe completes the animation quickly on mobile
+      const delta = rawDelta * 3.5;
 
       e.preventDefault();
 
@@ -205,9 +207,9 @@ export default function ScrollMorphHero() {
 
   // Motion transforms
   const morphProgress = useTransform(virtualScroll, [0, 600], [0, 1]);
-  const smoothMorph = useSpring(morphProgress, { stiffness: 80, damping: 28 });
+  const smoothMorph = useSpring(morphProgress, { stiffness: 140, damping: 30 });
   const scrollRotate = useTransform(virtualScroll, [600, 3000], [0, 360]);
-  const smoothScrollRotate = useSpring(scrollRotate, { stiffness: 80, damping: 28 });
+  const smoothScrollRotate = useSpring(scrollRotate, { stiffness: 140, damping: 30 });
 
   // Mouse parallax
   const mouseX = useMotionValue(0);

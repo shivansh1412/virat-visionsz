@@ -1,5 +1,6 @@
 "use client"
 import { LayoutGroup, motion } from "framer-motion"
+import Link from "next/link"
 import { TextRotate } from "@/components/ui/text-rotate"
 import Floating, { FloatingElement } from "@/components/ui/parallax-floating"
 
@@ -133,18 +134,22 @@ export function LandingHero() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.7 }}
         >
-          <motion.button
-            className="text-sm sm:text-base md:text-lg font-semibold tracking-tight text-white bg-[#c8922a] hover:bg-[#d4a843] px-6 py-3 md:px-8 md:py-3.5 rounded-full shadow-xl"
-            whileHover={{ scale: 1.05, transition: { type: "spring", damping: 30, stiffness: 400 } }}
-          >
-            Start Your Project <span className="ml-1">→</span>
-          </motion.button>
-          <motion.button
-            className="text-sm sm:text-base md:text-lg font-semibold tracking-tight text-white bg-[#1a2a5e] hover:bg-[#243570] px-6 py-3 md:px-8 md:py-3.5 rounded-full shadow-xl"
-            whileHover={{ scale: 1.05, transition: { type: "spring", damping: 30, stiffness: 400 } }}
-          >
-            View Portfolio
-          </motion.button>
+          <Link href="/about#contact">
+            <motion.button
+              className="text-sm sm:text-base md:text-lg font-semibold tracking-tight text-white bg-[#c8922a] hover:bg-[#d4a843] px-6 py-3 md:px-8 md:py-3.5 rounded-full shadow-xl"
+              whileHover={{ scale: 1.05, transition: { type: "spring", damping: 30, stiffness: 400 } }}
+            >
+              Start Your Project <span className="ml-1">→</span>
+            </motion.button>
+          </Link>
+          <Link href="/#portfolio">
+            <motion.button
+              className="text-sm sm:text-base md:text-lg font-semibold tracking-tight text-white bg-[#1a2a5e] hover:bg-[#243570] px-6 py-3 md:px-8 md:py-3.5 rounded-full shadow-xl"
+              whileHover={{ scale: 1.05, transition: { type: "spring", damping: 30, stiffness: 400 } }}
+            >
+              View Portfolio
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>
