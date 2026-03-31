@@ -208,7 +208,6 @@ const SERVICES = [
 
 // ─── stats ─────────────────────────────────────────────────────────────────────
 const STATS = [
-  { value: "20+", label: "Years in Business" },
   { value: "500+", label: "Projects Delivered" },
   { value: "₹2,000Cr+", label: "Value Constructed" },
   { value: "NCR & Beyond", label: "Geographic Reach" },
@@ -290,9 +289,8 @@ export default function AboutPage() {
                     Virat Visionsz Pvt Ltd
                   </strong>{" "}
                   is a Delhi NCR-based EPC (Engineering, Procurement &
-                  Construction) company with over two decades of experience
-                  delivering high-quality residential, commercial, and
-                  institutional projects.
+                  Construction) company delivering high-quality residential,
+                  commercial, and institutional projects.
                 </p>
                 <p>
                   Founded on the belief that great construction is equal parts

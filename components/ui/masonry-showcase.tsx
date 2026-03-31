@@ -13,7 +13,7 @@ const TILES = [
     tag: "Director's Note",
     title: "Meet Virat Singh",
     subtitle: "Founder & Managing Director",
-    desc: "Two decades of turning empty land into enduring landmarks. In his own words.",
+    desc: "Turning empty land into enduring landmarks. In his own words.",
     img: "/virat-singh.png",
     href: "/about",
     cta: "Read His Story",
