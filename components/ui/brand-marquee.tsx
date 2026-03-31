@@ -41,14 +41,14 @@ const BRANDS_ROW1 = [
     ),
   },
   {
-    name: "JK Cement",
-    img: "https://www.jkcement.com/wp-content/themes/jkcement/images/new-logo-jk.webp",
-    fallback: "/brands/jkcement.svg",
+    name: "Ambuja Cement",
+    img: "https://www.ambujacement.com/-/media/Project/AmbujaLimited/Common/Logo/Ambuja-Footer-1.ashx",
+    fallback: "/brands/ambuja.svg",
     svg: (
-      <svg viewBox="0 0 120 36" className="h-7 w-auto">
-        <rect x="0" y="0" width="42" height="36" fill="#C8102E" rx="3"/>
-        <text x="6" y="26" fontFamily="Arial" fontWeight="bold" fontSize="22" fill="white">JK</text>
-        <text x="48" y="26" fontFamily="Arial" fontWeight="bold" fontSize="14" fill="#1A1A1A">CEMENT</text>
+      <svg viewBox="0 0 150 36" className="h-7 w-auto">
+        <rect x="0" y="0" width="150" height="36" fill="#E31837" rx="3"/>
+        <text x="75" y="24" fontFamily="Arial" fontWeight="bold" fontSize="16" fill="white" textAnchor="middle">AMBUJA</text>
+        <text x="75" y="33" fontFamily="Arial" fontSize="8" fill="white" textAnchor="middle" letterSpacing="2">CEMENT</text>
       </svg>
     ),
   },
@@ -76,14 +76,14 @@ const BRANDS_ROW1 = [
     ),
   },
   {
-    name: "Lauritz Knudsen",
-    img: "/brands/lauritz-knudsen.svg",
-    fallback: "/brands/lauritz-knudsen.svg",
+    name: "SAIL",
+    img: "https://www.sail.co.in/sites/default/files/SAIL_LOGO_NEW.png",
+    fallback: "/brands/sail.svg",
     svg: (
-      <svg viewBox="0 0 300 120" className="h-10 w-auto">
-        <rect width="300" height="120" rx="10" fill="#003D7C"/>
-        <text x="150" y="52" fontFamily="Arial" fontWeight="700" fontSize="28" fill="white" textAnchor="middle">Lauritz</text>
-        <text x="150" y="84" fontFamily="Arial" fontWeight="700" fontSize="28" fill="white" textAnchor="middle">Knudsen</text>
+      <svg viewBox="0 0 120 36" className="h-7 w-auto">
+        <rect x="0" y="0" width="120" height="36" fill="#003087" rx="3"/>
+        <text x="60" y="24" fontFamily="Arial" fontWeight="900" fontSize="22" fill="white" textAnchor="middle">SAIL</text>
+        <text x="60" y="33" fontFamily="Arial" fontSize="7" fill="#c8c8c8" textAnchor="middle" letterSpacing="1">STEEL AUTHORITY OF INDIA</text>
       </svg>
     ),
   },
@@ -126,14 +126,13 @@ const BRANDS_ROW1 = [
 // ── Row 2: Premium finishes + Italian design + sanitaryware ───────────────
 const BRANDS_ROW2 = [
   {
-    name: "Caterpillar",
-    img: "/brands/caterpillar.svg",
-    fallback: "/brands/caterpillar.svg",
+    name: "Somany",
+    img: "https://d3joggurz1vobr.cloudfront.net/static/web/images/somany-logo-new.jpg",
+    fallback: "/brands/somany.svg",
     svg: (
-      <svg viewBox="0 0 100 36" className="h-7 w-auto">
-        <rect x="0" y="0" width="96" height="36" fill="#FFD100" rx="3"/>
-        <text x="8" y="26" fontFamily="Arial" fontWeight="900" fontSize="22" fill="#1A1A1A">CAT</text>
-        <polygon points="78,10 88,18 78,26" fill="#1A1A1A"/>
+      <svg viewBox="0 0 140 36" className="h-7 w-auto">
+        <text x="2" y="26" fontFamily="Arial" fontWeight="bold" fontSize="22" fill="#E31837">SOMANY</text>
+        <text x="2" y="35" fontFamily="Arial" fontSize="8" fill="#555" letterSpacing="2">CERAMICS</text>
       </svg>
     ),
   },
@@ -171,13 +170,13 @@ const BRANDS_ROW2 = [
     ),
   },
   {
-    name: "Hindalco",
-    img: "https://www.hindalco.com/Upload/homepage/hindalco-branding-new-logo-v2.svg",
-    fallback: "/brands/hindalco.svg",
+    name: "Hindware",
+    img: "/brands/hindware.svg",
+    fallback: "/brands/hindware.svg",
     svg: (
-      <svg viewBox="0 0 140 36" className="h-7 w-auto">
-        <text x="2" y="26" fontFamily="Arial" fontWeight="bold" fontSize="18" fill="#1B3A6B">HINDALCO</text>
-        <text x="2" y="35" fontFamily="Arial" fontSize="8" fill="#C8922A" letterSpacing="1">INDUSTRIES</text>
+      <svg viewBox="0 0 150 36" className="h-7 w-auto">
+        <text x="2" y="26" fontFamily="Arial" fontWeight="bold" fontSize="20" fill="#1B3A6B">HINDWARE</text>
+        <text x="2" y="35" fontFamily="Arial" fontSize="8" fill="#C8922A" letterSpacing="1">BATH FITTINGS</text>
       </svg>
     ),
   },
@@ -194,14 +193,13 @@ const BRANDS_ROW2 = [
     ),
   },
   {
-    name: "Legrand",
-    img: "https://upload.wikimedia.org/wikipedia/en/thumb/a/af/Legrand.svg/250px-Legrand.svg.png",
-    fallback: "/brands/legrand.svg",
+    name: "Roca",
+    img: "https://www.roca.in/documents/20126/346080475/roca-logo.svg/4dc29d13-1df3-b628-786b-7c63db57cdcd?t=1753429104544",
+    fallback: "/brands/roca.svg",
     svg: (
-      <svg viewBox="0 0 130 36" className="h-7 w-auto">
-        <circle cx="16" cy="18" r="14" fill="#009639"/>
-        <text x="14" y="23" fontFamily="Arial" fontWeight="bold" fontSize="13" fill="white" textAnchor="middle">L</text>
-        <text x="36" y="26" fontFamily="Arial" fontWeight="bold" fontSize="18" fill="#1A1A1A">LEGRAND</text>
+      <svg viewBox="0 0 110 36" className="h-7 w-auto">
+        <text x="2" y="28" fontFamily="Georgia" fontWeight="bold" fontSize="28" fill="#003087" letterSpacing="3">ROCA</text>
+        <line x1="2" y1="32" x2="106" y2="32" stroke="#003087" strokeWidth="1.5"/>
       </svg>
     ),
   },
