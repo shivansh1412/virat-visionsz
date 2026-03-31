@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Virat Visionsz Pvt Ltd — Building Legacies with Infinite Vision",
   description:
     "An EPC organisation committed to structures that perform, endure, and define the landscape for decades.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -18,6 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <SiteFooter />
